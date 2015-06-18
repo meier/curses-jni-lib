@@ -1,0 +1,63 @@
+##=========================================================================== #
+## Header/ Summary Section
+##=========================================================================== #
+Name: @PROJECT@
+Version: @VERSION@
+Release: @RELEASE@%{?dist}
+
+Summary: Curses Java Native Interface Plugin
+License: GPL/BSD
+Group: System Environment/Libraries
+BuildRoot: %{_tmppath}/@PROJECT@-@VERSION@-@RELEASE@
+Source: @PROJECT@-@VERSION@.tar.gz
+Requires: ncurses ncurses-devel libgcj libgcj-devel
+BuildRequires: ncurses ncurses-devel libgcj libgcj-devel
+
+%description
+llnl-curses-jni-lib is the Java Native Interface library that will be loaded by
+the JCURSES jar package.
+
+%prep
+%setup -q
+
+##=========================================================================== #
+## Build Section
+##=========================================================================== #
+
+%build
+%configure
+make
+
+##=========================================================================== #
+##  Installation Section
+##=========================================================================== #
+
+%install
+make DESTDIR=${RPM_BUILD_ROOT} install
+
+# remove unpackaged files from the buildroot
+rm -f $RPM_BUILD_ROOT%{_libdir}/*.la
+
+%clean
+rm -rf $RPM_BUILD_ROOT
+
+
+##=========================================================================== #
+## Files to Install
+##=========================================================================== #
+
+%files
+%defattr(-,root,root)
+%{_libdir}/libjcurses*.so.*
+%{_libdir}/libjcurses*.so
+%doc ChangeLog
+%doc INSTALL
+%doc README
+%defattr(640,root,root)
+%config(noreplace)
+
+%changelog
+* Wed Oct  8 2014 Tim Meier <meier3@llnl.gov> 1.0.0-5
+- fixed some spelling, convert to configure.ac, but no code change
+
+

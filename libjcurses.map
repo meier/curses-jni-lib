@@ -1,0 +1,4 @@
+CURSES_JNI_1.0 {
+	global: *;
+	local: *;
+};
