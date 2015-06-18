@@ -1,0 +1,26 @@
+Installation Instructions
+*************************
+
+./autogen.sh 
+./configure
+make
+
+To continue, and build a tar ball
+
+make dist
+
+To build the source and binary rpms from that tar ball
+
+rpmbuild -ta *.tar.gz
+
+Often, its useful to try to build a binary rpm from the source rpm
+
+cd .....?? /rpm/SRPM
+rpm -i llnl-curses-jni-libs-1.0.0-5.ch5.src.rpm
+cd .....??/rpm/SPECS
+rpmbuild -ba llnl-curses-jni-libs.spec
+
+Now the source and binary rpms exist in the appropriate build dirs
+
+cd ....??/rpm/RPMS/x86_64
+ls -lart

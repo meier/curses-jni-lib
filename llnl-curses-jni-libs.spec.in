@@ -52,12 +52,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libjcurses*.so
 %doc ChangeLog
 %doc INSTALL
-%doc README
+%doc README_ORIG
+%doc README.md
 %defattr(640,root,root)
 %config(noreplace)
 
 %changelog
-* Wed Oct  8 2014 Tim Meier <meier3@llnl.gov> 1.0.0-5
-- fixed some spelling, convert to configure.ac, but no code change
+* Thu Jun 18 2015 Tim Meier <meier3@llnl.gov> 1.0.0-5
+- repackaged, converted to configure.ac, but no code change
 
 

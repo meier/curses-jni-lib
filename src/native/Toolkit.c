@@ -339,8 +339,8 @@ JNIEXPORT void JNICALL Java_jcurses_system_Toolkit_printString (JNIEnv * env, jc
 	int xpos,ypos;
 	int length = (*env)->GetArrayLength(env,bytes);
 	unsigned char c;
-	unsigned char * charArray = (*env)->GetByteArrayElements(env, bytes, NULL);
-
+	jbyte *jbArray = (*env)->GetByteArrayElements(env, bytes, NULL);
+	unsigned char * charArray = (unsigned char*) jbArray;
 	
 	attrset(JCURSES_ATTRIBUTES(number,attr));
 	
@@ -377,13 +377,12 @@ JNIEXPORT void JNICALL Java_jcurses_system_Toolkit_printString (JNIEnv * env, jc
 				addch(c);
 			}
 		}
-		
 	}
 	
 	endPainting();
 	
 	// RELEASE ALLOCATED JNI MEMORY - Fix for Bug ID #3042758
-	(*env)->ReleaseByteArrayElements(env, bytes, charArray, JNI_ABORT);
+	(*env)->ReleaseByteArrayElements(env, bytes, jbArray, JNI_ABORT);
 	
 }
 
