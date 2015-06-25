@@ -54,6 +54,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libjcurses*.so
 %doc ChangeLog
 %doc INSTALL
+%doc DISCLAIMER
+%doc LICENSE
 %doc README_ORIG
 %doc README.md
 %defattr(640,root,root)
