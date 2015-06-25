@@ -4,6 +4,8 @@
 Name: @PROJECT@
 Version: @VERSION@
 Release: @RELEASE@%{?dist}
+Provides: jcurses
+
 
 Summary: Curses Java Native Interface Plugin
 License: GPL/BSD
