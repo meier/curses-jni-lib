@@ -34,6 +34,7 @@ EXTRA_DIST = $(srcdir)/llnl-curses-jni-libs.spec.in \
 				 $(srcdir)/INSTALL \
 				 $(srcdir)/README.md \
 				 $(srcdir)/README_ORIG \
+				 $(srcdir)/LICENSE \
 			    $(srcdir)/META \
 			    $(srcdir)/DISCLAIMER
 
