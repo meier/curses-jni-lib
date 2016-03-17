@@ -1,5 +1,6 @@
 CURSES=@curses@
 JAVAHOME=@javahome@
+JAVAHOME=/usr/lib/jvm/java
 JAVAC=$(JAVAHOME)/bin/javac
 JAR=$(JAVAHOME)/bin/jar
 JAVAH=$(JAVAHOME)/bin/javah
@@ -7,6 +8,7 @@ JAVA=$(JAVAHOME)/bin/java
 JAVADOC=$(JAVAHOME)/bin/javadoc
 
 INCLUDES = -I$(JAVAHOME)/include -I$(JAVAHOME)/include/@javaos@
+INCLUDES = -I$(JAVAHOME)/include -I$(JAVAHOME)/include/linux
 
 lib_LTLIBRARIES = src/libjcurses.la
 

@@ -12,8 +12,10 @@ License: GPL/BSD
 Group: System Environment/Libraries
 BuildRoot: %{_tmppath}/@PROJECT@-@VERSION@-@RELEASE@
 Source: @PROJECT@-@VERSION@.tar.gz
-Requires: ncurses ncurses-devel libgcj libgcj-devel
-BuildRequires: ncurses ncurses-devel libgcj libgcj-devel
+##Requires: ncurses ncurses-devel libgcj libgcj-devel
+##BuildRequires: ncurses ncurses-devel libgcj libgcj-devel
+Requires: ncurses ncurses-devel
+BuildRequires: ncurses ncurses-devel java-devel
 
 %description
 llnl-curses-jni-lib is the Java Native Interface library that will be loaded by
